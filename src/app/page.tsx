@@ -12,10 +12,8 @@ async function fetchData(){
 
 
 
-interface PageProps {
-    profile: any //
-}
-export default function Page({}:PageProps){
+
+export default function Page(){
 
     const [profiles, setProfiles] = useState<any[]>([]);
     const initialized = useRef(false);
