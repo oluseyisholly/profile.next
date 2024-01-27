@@ -20,11 +20,22 @@
     display: flex;
 }
 
-.wrapper > div  > div {
+.wrapper > div  > div:nth-of-type(1) {
     min-width: 300px;
     background-color: aqua;
     border-radius: 20px 10px 0px 0px;
     padding-top: 40px;
+}
+
+.wrapper > div  > div:nth-of-type(2){
+    margin: auto;
+    padding-block: 20px;
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
 }
 
 .wrapper img {

@@ -4,9 +4,17 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './main.module.css'
 
 async function fetchData(){
+  try{
     const response =  await fetch('https://randomuser.me/api/');
     const data = await response.json();
+    console.log(data)
     return data?.results
+  }
+  catch(e){
+    console.log(e); 
+    //throw new Error({statusCode:500, title:'error', withDarkMode:false })
+  }
+    
 }
 
 
@@ -40,7 +48,7 @@ export default function Page(){
 
   return <>
     {
-        profiles.map((item, index) =>{
+        profiles ? profiles.map((item, index) =>{
           return  <div className={styles.wrapper} key={index}>
                 <div>
                     <img  src={item?.picture?.large}></img>
@@ -64,10 +72,14 @@ export default function Page(){
                             <p>Gender:</p> <span>{item?.gender}</span>
                         </div>
                     </div>
+                    <div>
+                       <button>prev</button>
+                       <button>next</button>
+                    </div>
                 </div>
             </div>
-        })
-    }
+        }) : <p style={{fontSize: '40px'}}> An Error Occured</p>
+    } 
   </>
 };
 

@@ -87,7 +87,31 @@ body {
 
 p{
   font-weight: 800;
-  
+
+}
+
+button {
+  background-color: solid 1px rgb(183, 183, 183); 
+  border-radius: 15px;
+  border: none;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: aqua;
+  color: white;
+  outline: solid 2px white;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 body {
