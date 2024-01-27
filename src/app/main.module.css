@@ -1,0 +1,45 @@
+.wrapper{
+    justify-content: center;
+    display: flex;
+    padding-top: 100px;
+}
+
+.wrapper > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    border: solid 1px rgb(183, 183, 183);
+    border-radius: 5px;
+    
+    /* background-color: black; */
+}
+
+.wrapper > div > div >  div {
+    padding: 4px;
+    display: flex;
+}
+
+.wrapper > div  > div {
+    width: 400px;
+    background-color: aqua;
+    border-radius: 20px 10px 0px 0px;
+    padding-top: 20px;
+}
+
+.wrapper img {
+    border: 10px solid white;
+    border-radius: 50%;
+    margin-bottom: -40px;
+    z-index: 10;
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.wrapper  p {
+    padding-right: 10px;
+}
+
+
+

@@ -6,14 +6,14 @@ import styles from './main.module.css'
 async function fetchData(){
     const response =  await fetch('https://randomuser.me/api/');
     const data = await response.json();
+    console.log(data?.results);
     return data?.results
+   
+
 }
 
-
-
-
 export interface pageProps {
-    profile: any //
+    profile: any
 }
 export default function page({}:pageProps){
 
@@ -21,24 +21,36 @@ export default function page({}:pageProps){
     const initialized = useRef(false);
 
 
-    const getProfiles = async () =>{
-      const result = await fetchData();
-      setProfiles(result)
-
-  }
-
-
     useEffect(() => {
+        //setInterval(getProfile, 300000000000);
+        console.log()
         if (!initialized.current) {
             initialized.current = true
-            getProfiles();
+        
+        console.log('fire once?')
+        getProfile();
         }
-        const intervalId = setInterval(getProfiles, 5000)
+        const intervalId = setInterval(getProfile, 5000)
           return () => {
             clearInterval(intervalId)
           }
 
+       
+
+        // getProfile();
     }, [profiles])
+
+
+   const  getProfile = async () =>{
+        console.log('get a job');
+        const result = await fetchData();
+        setProfiles(result)
+
+    }
+
+
+    
+
 
   return <>
     {
